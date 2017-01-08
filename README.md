@@ -15,3 +15,17 @@ This reduced the number of calls to the owners-api.
 $ go get -d github.com/scottweston/tesla
 $ go install github.com/scottweston/tesla
 ```
+
+## Configuration
+
+Create a file at `~/.config/tesla.yml` with the following contents:
+
+```
+retries: 5
+redis:
+  host: "127.0.0.1"
+client_id: "e4a9949fcfa04068f59abb5a658f2bac0a3428e4652315490b659d5ab3f35a9e"
+client_secret: "c75f14bbadc8bee3a7594412c31416f8300256d7668ea7e6e7f06727bfb9d220"
+username: "your_tesla@login.address"
+password: "your_tesla_password"
+```
