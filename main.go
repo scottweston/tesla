@@ -40,6 +40,7 @@ func storeStatusInRedis(redis_client *redis.Client, chargeState *tesla.ChargeSta
 	stringChargeState["ChargeRate"] = strconv.FormatFloat(chargeState.ChargeRate, 'f', 2, 64)
 	stringChargeState["ChargePortDoorOpen"] = strconv.FormatBool(chargeState.ChargePortDoorOpen)
 	stringChargeState["ChargePortLatch"] = chargeState.ChargePortLatch
+	stringChargeState["ChargerVoltage"] = fmt.Sprintf("%v", chargeState.ChargerVoltage)
 
 	_, err := redis_client.HMSet("tesla_state", stringChargeState).Result()
 	if err != nil {
